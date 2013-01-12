@@ -1,0 +1,10 @@
+insert into Place_Types (type_id, description) values (0, 'school');
+insert into Place_Types (type_id, description) values (1, 'dwelling');
+insert into Place_Types (type_id, description) values (2, 'shop');
+insert into Place_Types (type_id, description) values (3, 'restaurant');
+insert into Place_Types (type_id, description) values (4, 'transportation');
+insert into Place_Types (type_id, description) values (5, 'prison');
+insert into Place_Types (type_id, description) values (6, 'hospital');
+insert into Place_Types (type_id, description) values (7, 'government');
+insert into Place_Types (type_id, description) values (8, 'bank');
+insert into Place_Types (type_id, description) values (9, 'misc');

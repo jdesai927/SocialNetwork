@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>VisualizeActivities</title>
+<style>
+  body{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    background-color: #CCCCCC;
+  }
+  #mapCanvas{
+    width: 1080px;
+    height: 720px;
+    float: left;
+  }
+  #centering{
+    width: 1080px;
+    height: 720px;
+    margin: 0px auto;
+    font-family: "Andale Mono", AndaleMono, monospace;
+  }
+  #top{
+    margin-top: 10px;
+  }
+  #directions{
+    float: left;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .legend{
+    float: right;
+  }
+  #yellow{
+    color: yellow;
+  }
+  #green{
+    color: green;
+  }
+  #blue{
+    color: blue;
+  }
+</style>
+<script src="http://www.html5canvastutorials.com/libraries/kinetic-v3.8.3.js"></script>
+<script language="javascript">
+  window.onload = function(){
+    var stage = new Kinetic.Stage("mapCanvas", 1080, 720);
+    var shapesLayer = new Kinetic.Layer();
+    var tooltipLayer = new Kinetic.Layer();
+    
+	var user = new Kinetic.Circle({x:447.719462,y:418.6338822,fill:"yellow",strokeWidth:0,radius:20.0});user.on("mousemove", function(){var mousePos = stage.getMousePosition();tooltip.setPosition(mousePos.x + 10, mousePos.y + 10);tooltip.setText("Hannah Abbott (0)");tooltip.show();latitudeTooltip.setText("lat: 133.859731");latitudeTooltip.show();longitudeTooltip.setText("lon: 199.3169411");longitudeTooltip.show();tooltipLayer.draw();});user.on("mouseout", function(){tooltip.hide();latitudeTooltip.hide();longitudeTooltip.hide();tooltipLayer.draw();});shapesLayer.add(user);
+	var place0 = new Kinetic.Circle({x:515.3012412,y:429.230448,fill:"blue",strokeWidth:0,radius:15.0});place0.on("mousemove", function(){var mousePos = stage.getMousePosition();tooltip.setPosition(mousePos.x + 10, mousePos.y + 10);tooltip.setText("shop: Telescope Shop");tooltip.show();latitudeTooltip.setText("lat: 167.6506206");latitudeTooltip.show();longitudeTooltip.setText("lon: 204.615224");longitudeTooltip.show();tooltipLayer.draw();});place0.on("mouseout", function(){tooltip.hide();latitudeTooltip.hide();longitudeTooltip.hide();tooltipLayer.draw();});shapesLayer.add(place0);
+	var place1 = new Kinetic.Circle({x:761.7999504,y:409.6321614,fill:"blue",strokeWidth:0,radius:13.333333333333336});place1.on("mousemove", function(){var mousePos = stage.getMousePosition();tooltip.setPosition(mousePos.x + 10, mousePos.y + 10);tooltip.setText("school: Beauxbatons");tooltip.show();latitudeTooltip.setText("lat: 290.8999752");latitudeTooltip.show();longitudeTooltip.setText("lon: 194.8160807");longitudeTooltip.show();tooltipLayer.draw();});place1.on("mouseout", function(){tooltip.hide();latitudeTooltip.hide();longitudeTooltip.hide();tooltipLayer.draw();});shapesLayer.add(place1);
+	var place2 = new Kinetic.Circle({x:464.5914996,y:482.2163894,fill:"blue",strokeWidth:0,radius:10.0});place2.on("mousemove", function(){var mousePos = stage.getMousePosition();tooltip.setPosition(mousePos.x + 10, mousePos.y + 10);tooltip.setText("dwelling: Spinner's Edge");tooltip.show();latitudeTooltip.setText("lat: 142.2957498");latitudeTooltip.show();longitudeTooltip.setText("lon: 231.1081947");longitudeTooltip.show();tooltipLayer.draw();});place2.on("mouseout", function(){tooltip.hide();latitudeTooltip.hide();longitudeTooltip.hide();tooltipLayer.draw();});shapesLayer.add(place2);
+	var friend0 = new Kinetic.Circle({x:481.4863966,y:348.2612412,fill:"green",strokeWidth:0,radius:15.0});friend0.on("mousemove", function(){var mousePos = stage.getMousePosition();tooltip.setPosition(mousePos.x + 10, mousePos.y + 10);tooltip.setText("Rose Zeller (571)");tooltip.show();latitudeTooltip.setText("lat: 150.7431983");latitudeTooltip.show();longitudeTooltip.setText("lon: 164.1306206");longitudeTooltip.show();tooltipLayer.draw();});friend0.on("mouseout", function(){tooltip.hide();latitudeTooltip.hide();longitudeTooltip.hide();tooltipLayer.draw();});shapesLayer.add(friend0);
+	var friend1 = new Kinetic.Circle({x:616.0802776,y:498.5494208,fill:"green",strokeWidth:0,radius:15.0});friend1.on("mousemove", function(){var mousePos = stage.getMousePosition();tooltip.setPosition(mousePos.x + 10, mousePos.y + 10);tooltip.setText("Pomona Sprout (463)");tooltip.show();latitudeTooltip.setText("lat: 218.0401388");latitudeTooltip.show();longitudeTooltip.setText("lon: 239.2747104");longitudeTooltip.show();tooltipLayer.draw();});friend1.on("mouseout", function(){tooltip.hide();latitudeTooltip.hide();longitudeTooltip.hide();tooltipLayer.draw();});shapesLayer.add(friend1);
+	var friend2 = new Kinetic.Circle({x:588.8815812,y:194.1574836,fill:"green",strokeWidth:0,radius:15.0});friend2.on("mousemove", function(){var mousePos = stage.getMousePosition();tooltip.setPosition(mousePos.x + 10, mousePos.y + 10);tooltip.setText("Hepzibah Smith (457)");tooltip.show();latitudeTooltip.setText("lat: 204.4407906");latitudeTooltip.show();longitudeTooltip.setText("lon: 87.0787418");longitudeTooltip.show();tooltipLayer.draw();});friend2.on("mouseout", function(){tooltip.hide();latitudeTooltip.hide();longitudeTooltip.hide();tooltipLayer.draw();});shapesLayer.add(friend2);
+    
+    var tooltip = new Kinetic.Text({
+        text: "",
+        fontFamily: "\"Andale Mono\", AndaleMono, monospace",
+        fontSize: 10,
+        padding: 5,
+        textFill: "black",
+        fill: "white",
+        alpha: 0.75,
+        visible: false
+    });
+    var latitudeTooltip = new Kinetic.Text({
+        text: "",
+        fontFamily: "\"Andale Mono\", AndaleMono, monospace",
+        fontSize: 12,
+        padding: 5,
+        textFill: "black",
+        fill: "transparent",
+        alpha: 0.75,
+        visible: false
+    });
+    var longitudeTooltip = new Kinetic.Text({
+        text: "",
+        fontFamily: "\"Andale Mono\", AndaleMono, monospace",
+        fontSize: 12,
+        padding: 5,
+        textFill: "black",
+        fill: "transparent",
+        alpha: 0.75,
+        visible: false
+    });
+    
+    tooltipLayer.add(tooltip);
+    latitudeTooltip.setPosition(0,0);
+    tooltipLayer.add(latitudeTooltip);
+    longitudeTooltip.setPosition(0,20);
+    tooltipLayer.add(longitudeTooltip);
+
+    stage.add(shapesLayer);
+    stage.add(tooltipLayer);
+  };
+</script>
+</head>
+<body>
+  <div id="centering">
+    <div id="top">
+      <div id="directions">
+        Hover over nodes for details
+      </div>
+      <div class="legend"><span id="yellow">yellow</span>: user</div><br />
+      <div class="legend"><span id="green">green</span>: friend</div><br />
+      <div class="legend"><span id="blue">blue</span>: place</div><br />
+    </div>
+    <div id="mapCanvas"></div>
+  </div>
+</body>
+</html>

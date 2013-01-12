@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>VisualizeActivities</title>
+<style>
+  body{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    background-color: #CCCCCC;
+  }
+  #mapCanvas{
+    width: 1080px;
+    height: 720px;
+    float: left;
+  }
+  #centering{
+    width: 1080px;
+    height: 720px;
+    margin: 0px auto;
+    font-family: "Andale Mono", AndaleMono, monospace;
+  }
+  #top{
+    margin-top: 10px;
+  }
+  #directions{
+    float: left;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .legend{
+    float: right;
+  }
+  #yellow{
+    color: yellow;
+  }
+  #green{
+    color: green;
+  }
+  #blue{
+    color: blue;
+  }
+</style>
+<script src="http://www.html5canvastutorials.com/libraries/kinetic-v3.8.3.js"></script>
+<script language="javascript">
+  window.onload = function(){
+    var stage = new Kinetic.Stage("mapCanvas", 1080, 720);
+    var shapesLayer = new Kinetic.Layer();
+    var tooltipLayer = new Kinetic.Layer();
+    
+    //visualize activities insert here
+    
+    var tooltip = new Kinetic.Text({
+        text: "",
+        fontFamily: "\"Andale Mono\", AndaleMono, monospace",
+        fontSize: 10,
+        padding: 5,
+        textFill: "black",
+        fill: "white",
+        alpha: 0.75,
+        visible: false
+    });
+    var latitudeTooltip = new Kinetic.Text({
+        text: "",
+        fontFamily: "\"Andale Mono\", AndaleMono, monospace",
+        fontSize: 12,
+        padding: 5,
+        textFill: "black",
+        fill: "transparent",
+        alpha: 0.75,
+        visible: false
+    });
+    var longitudeTooltip = new Kinetic.Text({
+        text: "",
+        fontFamily: "\"Andale Mono\", AndaleMono, monospace",
+        fontSize: 12,
+        padding: 5,
+        textFill: "black",
+        fill: "transparent",
+        alpha: 0.75,
+        visible: false
+    });
+    
+    tooltipLayer.add(tooltip);
+    latitudeTooltip.setPosition(0,0);
+    tooltipLayer.add(latitudeTooltip);
+    longitudeTooltip.setPosition(0,20);
+    tooltipLayer.add(longitudeTooltip);
+
+    stage.add(shapesLayer);
+    stage.add(tooltipLayer);
+  };
+</script>
+</head>
+<body>
+  <div id="centering">
+    <div id="top">
+      <div id="directions">
+        Hover over nodes for details
+      </div>
+      <div class="legend"><span id="yellow">yellow</span>: user</div><br />
+      <div class="legend"><span id="green">green</span>: friend</div><br />
+      <div class="legend"><span id="blue">blue</span>: place</div><br />
+    </div>
+    <div id="mapCanvas"></div>
+  </div>
+</body>
+</html>
